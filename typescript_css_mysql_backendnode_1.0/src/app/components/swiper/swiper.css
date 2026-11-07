@@ -1,0 +1,146 @@
+/* Contenedor principal del Slider */
+.slider-scroll-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 20px 50px;
+}
+
+/* Pista deslizante con Scroll Snap nativo */
+.swiper-horizontal-product {
+    background-color: var(--bg-secondary);
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 24px 10px;
+    scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+}
+
+.swiper-horizontal-product::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en Chrome/Safari */
+}
+
+/* Tarjeta de Producto */
+.product-item-link {
+    flex: 0 0 260px; /* Ancho fijo para mantener la estructura */
+    scroll-snap-align: start;
+    background-color: var(--bg-tertiary);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-speed) ease;
+}
+
+.product-item-link:hover {
+    transform: translateY(-5px);
+}
+
+.product-item-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-item-category {
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.product-item-headline {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-item-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--divider-color);
+    margin-bottom: 12px;
+}
+
+.product-item-price-shop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.product-item-price {
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.product-item-shop {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color var(--transition-speed);
+}
+
+.product-item-link:hover .product-item-shop {
+    color: var(--color-secondary);
+}
+
+/* Controles de navegación (Botones Flecha) */
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.slider-control:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+@media (max-width: 768px) {
+    .slider-scroll-container {
+        padding: 20px 10px;
+    }
+    .prev-btn { left: 2px; }
+    .next-btn { right: 2px; }
+}

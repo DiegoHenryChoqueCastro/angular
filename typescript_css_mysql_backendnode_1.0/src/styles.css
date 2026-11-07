@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --color-primary: #000000;
+    --color-accent: #FFD700;
+    --color-accent-hover: #DAA520;
+    --color-accent-glow: rgba(255, 215, 0, 0.35);
+    --color-text-light: #FFFFFF;
+    --color-overlay: rgba(0, 0, 0, 0.5);
+    /*Short*/
+    --color-surface: rgba(18, 18, 18, 0.82);
+    --color-surface-light: rgba(255, 255, 255, 0.08);
+    --radius-xl: 2.5rem;
+    --radius-lg: 1.5rem;
+    --radius-md: 18px;
+    --shadow-lg: 0 14px 34px rgba(0, 0, 0, 0.28);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+    
+    --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --header-height: 90px;
+    --header-height-mobile: 70px;
+    --transition-speed: 0.3s;
+
+    --bg-dark: #0b0b0b;
+    --bar-bg: #141414;
+    --accent-color: #ffc905;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+
+    --bg-primary: #000000;
+	--bg-primary-light: ;
+    --bg-secondary: #0b0b0b;
+    --bg-tertiary: #232323;
+	--color-primary: #ffffff;
+	--color-secondary: #ffc400;
+	--color-tertiary: #000000;
+	--color-quinto: #FFD700;
+	--color-sexto: #ffc400;
+	--color-septimo: #141414;
+    --accent-red: #ff0000;
+    --divider-color: #373737;
+    --transition-speed: 0.3s;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --text-muted: rgba(255, 255, 255, 0.6);
+	--font-heading: 'Anton', sans-serif;
+	--font-body: 'Barlow', sans-serif;
+    --font-fam: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --overlay-gradient: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 60%, rgba(0,0,0,0) 100%);
+    --card-radius: 12px;
+    --card-width: 212px;
+    --card-height: 376px;
+    --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+
+    --negro: #090909;
+    --negro-claro: #151515;
+    --amarillo: #ffd500;
+    --blanco: #f8f8f8;
+    --gris: #a6a6a6;
+    --borde: rgba(255, 213, 0, 0.19);
+    --color-card-border: rgba(255, 215, 0, 0.18);
+    --color-text-secondary: #D1D5DB;
+    --color-gold-border: #b87400;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    font-family: var(--font-main);
+    background-color: #121212;
+    color: var(--color-text-light);
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}

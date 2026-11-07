@@ -1,0 +1,29 @@
+<div class="slider-scroll-container">
+    <div #productSlider class="swiper-horizontal-product" id="productSlider">
+        @for (producto of productos$ | async; track producto.id) {
+    
+        <a class="product-item-link" href="#">
+            <div class="product-item-image">
+                <img class="item-image" [src]="'images/'+producto.imagen_principal" alt="The Strongest Camiseta Oficial 2026" loading="lazy">
+            </div>
+            <p class="product-item-category">{{producto.nombre_categoria}}</p>
+            <p class="product-item-headline">{{producto.nombre}}</p>
+            <span class="product-item-divider"></span>
+            <div class="product-item-price-shop">
+                <span class="product-item-price">{{ producto.precio | currency:'BOB':'Bs. ':'1.0-0' }}</span>
+                <span class="product-item-shop">Comprar</span>
+            </div>
+        </a>
+
+    }
+    </div>
+
+    <!-- Botones de Control -->
+    <button type="button" class="slider-control prev-btn" aria-label="Slide anterior" (click)="scrollPrev()">
+        <span class="material-symbols-outlined" aria-hidden="true">navigate_before</span>
+    </button>
+
+    <button type="button" class="slider-control next-btn" aria-label="Slide siguiente" (click)="scrollNext()">
+        <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
+    </button>
+  </div>

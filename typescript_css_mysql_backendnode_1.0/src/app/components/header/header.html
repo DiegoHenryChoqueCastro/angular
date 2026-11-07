@@ -1,0 +1,41 @@
+<header class="site-header">
+    <div class="header-container">
+        
+        <!-- Logo Principal -->
+        <a href="#" class="brand-logo" title="Inicio - Club The Strongest">
+            <!-- SVG Placeholder de Escudo/Logo -->
+            <img src="{{ logoEscudo}}" class="logo-image">
+            <span class="brand-name" translate="no">The Strongest</span>
+        </a>
+
+        <!-- Menú de Navegación Alinear a la derecha (antes de los botones) -->
+        <nav class="main-navigation" id="mainNavigation" aria-label="Navegación principal" [class.active]="isMenuOpen()">
+            <ul class="nav-menu">
+                <li><a href="#entradas" class="nav-link">El Club</a></li>
+                <li><a class="nav-link" [routerLink]="['/store']" routerLinkActive="activo">Tienda</a></li>
+                <li><a href="#tv" class="nav-link">Videos</a></li>
+                <li><a href="#afiliacion" class="nav-link">Afiliación</a></li>
+                <li><a class="nav-link" [routerLink]="['/stadium']" routerLinkActive="activo">Estadio</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botones de Acción (Carrito, Usuario, Búsqueda, Menú Mobile) -->
+        <div class="header-actions">
+            <button class="action-btn" aria-label="Ver carrito de compras" title="Carrito">
+                <span class="material-icons" translate="no">shopping_cart</span>
+            </button>
+            <button class="action-btn" aria-label="Iniciar sesión o Perfil" title="Mi Cuenta">
+                <span class="material-icons" translate="no">person</span>
+            </button>
+            <button class="action-btn" aria-label="Buscar" title="Buscar">
+                <span class="material-symbols-outlined" translate="no">search</span>
+            </button>
+
+            <!-- Botón Menú Móvil -->
+            <button class="action-btn mobile-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" [attr.aria-expanded]="isMenuOpen()" (click)="toggleMenu()">
+                <span class="material-symbols-outlined" id="menuIcon">{{isMenuOpen() ? 'close' : 'menu' }}</span>
+            </button>
+        </div>
+
+    </div>
+</header>

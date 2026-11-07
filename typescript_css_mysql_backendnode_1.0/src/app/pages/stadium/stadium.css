@@ -1,0 +1,1161 @@
+.estadio-container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* ---------------- ETIQUETAS ---------------- */
+
+.estadio-eyebrow,
+.estadio-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-secondary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1.6;
+}
+
+.estadio-eyebrow__line,
+.estadio-section-label > span {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  flex: 0 0 auto;
+  background: var(--color-secondary);
+}
+
+
+/* ---------------- BOTONES ---------------- */
+
+.estadio-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 55px;
+  padding: 0 24px;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.estadio-btn > span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.estadio-btn:hover {
+  transform: translateY(-3px);
+}
+
+.estadio-btn:hover > span {
+  transform: translate(3px, -2px);
+}
+
+.estadio-btn--yellow {
+  color: var(--bg-secondary) !important;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 0 0 rgba(245, 196, 0, 0);
+}
+
+.estadio-btn--yellow:hover {
+  background: var(--color-quinto);
+  border-color: var(--color-quinto);
+  box-shadow: 0 10px 32px rgba(245, 196, 0, 0.18);
+}
+
+.estadio-btn--outline {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.estadio-btn--outline:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+
+/* ---------------- HERO ---------------- */
+
+.estadio-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 700px;
+  min-height: min(760px, 88svh);
+  padding: 100px 8%;
+  overflow: hidden;
+  background: #070707;
+  isolation: isolate;
+}
+
+.estadio-hero::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.97) 0%,
+      rgba(5, 5, 5, 0.88) 28%,
+      rgba(5, 5, 5, 0.55) 55%,
+      rgba(5, 5, 5, 0.17) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 5, 5, 0.85) 0%,
+      transparent 35%,
+      rgba(5, 5, 5, 0.18) 100%
+    ),
+    url("../../../../public/images/estadio-achumani-club-the-strongest.jpg");
+
+  background-size: cover;
+  background-position: center, center, center 45%;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  will-change: transform;
+  animation: estadioHeroZoom 22s ease-in-out infinite alternate;
+}
+
+.estadio-hero::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 9%;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background: linear-gradient(
+    transparent,
+    rgba(245, 196, 0, 0.45),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.estadio-hero h1,
+.estadio-hero h2,
+.estadio-hero h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.estadio-hero__content {
+  width: min(720px, 100%);
+  animation: estadioFadeUp 1s ease both;
+}
+
+.estadio-hero .estadio-eyebrow {
+  margin-bottom: 32px;
+}
+
+.estadio-hero__title {
+  margin-bottom: 28px;
+  font-size: clamp(64px, 8vw, 112px);
+  letter-spacing: -2px;
+  line-height: 0.84;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.estadio-hero__title > span {
+  display: block;
+  margin-top: 9px;
+}
+
+.estadio-hero__yellow {
+  color: var(--color-secondary);
+  text-shadow: 0 0 45px rgba(245, 196, 0, 0.13);
+}
+
+.estadio-hero__description {
+  max-width: 470px;
+  margin-bottom: 32px;
+  color: #cecece;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.estadio-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.estadio-hero__signature {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 60px;
+}
+
+.estadio-hero__signature-number {
+  color: var(--color-secondary);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.estadio-hero__signature-line {
+  width: 50px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.estadio-hero__signature-text {
+  color: #bcbcbc;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+}
+
+.estadio-hero__vertical {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.estadio-hero__scroll {
+  position: absolute;
+  right: 8%;
+  bottom: 38px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c3c3c3;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.estadio-hero__scroll span {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--color-secondary);
+}
+
+.estadio-hero__scroll span::after {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  content: "";
+  border-top: 1px solid var(--color-secondary);
+  border-right: 1px solid var(--color-secondary);
+  transform: rotate(45deg);
+}
+
+
+/* ---------------- FRANJA ANIMADA ---------------- */
+
+.estadio-marquee {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 62px;
+  overflow: hidden;
+  color: var(--bg-secondary);
+  background: var(--color-secondary);
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.estadio-marquee__track {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  width: max-content;
+  min-width: 200%;
+  padding-inline: 20px;
+  animation: estadioMarquee 32s linear infinite;
+}
+
+.estadio-marquee__track span {
+  flex: 0 0 auto;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.estadio-marquee__track i {
+  font-size: 15px;
+  font-style: normal;
+}
+
+
+/* ---------------- SECCION DE ESTADIOS ---------------- */
+
+.estadios-section {
+  position: relative;
+  padding: 125px 0 130px;
+  background:
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(245, 196, 0, 0.055),
+      transparent 40%
+    ),
+    #0c0c0c;
+}
+
+.estadios-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.estadios-heading .estadio-section-label {
+  margin-bottom: 23px;
+}
+
+.estadios-title {
+  margin-bottom: 0;
+  font-size: clamp(49px, 6vw, 78px);
+  letter-spacing: -1px;
+}
+
+.estadios-title > span {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-secondary);
+}
+
+.estadios-heading__text {
+  max-width: 390px;
+  margin-bottom: 4px;
+  color: var(--gris);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+
+/* ---------------- TARJETAS DE ESTADIOS ---------------- */
+
+.estadios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.estadio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 580px;
+  padding: 27px 30px 25px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: var(--color-septimo);
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.estadio-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(245, 196, 0, 0.65);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+}
+
+.estadio-card__image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.estadio-card:hover .estadio-card__image {
+  transform: scale(1.07);
+}
+
+.estadio-card--achumani .estadio-card__image {
+  background-image: url("../../../../public/images/estadio-lleno-achumani-club-the-strongest.jpg");
+  background-position: center;
+}
+
+.estadio-card--hernando .estadio-card__image {
+  background-image: url(
+    "../../../../public/images/estadio-lleno-clasico-club-the-strongest.jpg"
+  );
+  background-position: center;
+}
+
+.estadio-card__overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.1) 26%,
+      rgba(0, 0, 0, 0.36) 48%,
+      rgba(0, 0, 0, 0.96) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.06)
+    );
+  transition: background 0.4s ease;
+}
+
+.estadio-card:hover .estadio-card__overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.63),
+      rgba(0, 0, 0, 0.16) 35%,
+      rgba(0, 0, 0, 0.93) 100%
+    );
+}
+
+.estadio-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.estadio-card__number {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.estadio-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--blanco);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.estadio-card__tag > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  box-shadow: 0 0 10px rgba(245, 196, 0, 0.65);
+}
+
+.estadio-card__content {
+  position: relative;
+  padding-top: 70px;
+}
+
+.estadio-card__eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-secondary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.estadio-card__content h3 {
+  margin-bottom: 18px;
+  font-size: clamp(35px, 4.1vw, 53px);
+  line-height: 0.99;
+  overflow-wrap: anywhere;
+}
+
+.estadio-card__content h3 > span {
+  display: block;
+  color: var(--color-secondary);
+}
+
+.estadio-card__description {
+  max-width: 430px;
+  margin-bottom: 25px;
+  color: #d0d0d0;
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.estadio-card__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 25px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.estadio-card__detail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.estadio-card__detail-icon {
+  flex: 0 0 auto;
+  color: var(--color-secondary);
+  font-size: 25px;
+}
+
+.estadio-card__detail strong,
+.estadio-card__detail small {
+  display: block;
+}
+
+.estadio-card__detail strong {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.estadio-card__detail small {
+  color: #bebebe;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.estadio-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 4px;
+  color: var(--blanco);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.estadio-card__link:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.estadio-card__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  color: var(--bg-secondary);
+  background: var(--color-secondary);
+  font-size: 19px;
+  transition: transform 0.3s ease;
+}
+
+.estadio-card__link:hover .estadio-card__arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* ---------------- SECCION HISTORIA ---------------- */
+
+.estadio-legacy {
+  position: relative;
+  padding: 115px 0;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      120deg,
+      #151515 0%,
+      #0a0a0a 60%,
+      #121000 100%
+    );
+}
+
+.estadio-legacy__pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.11;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 22px,
+    rgba(245, 196, 0, 0.2) 23px,
+    transparent 24px,
+    transparent 46px
+  );
+  mask-image: linear-gradient(90deg, black, transparent 65%);
+}
+
+.estadio-legacy__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.estadio-legacy__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  overflow: hidden;
+  border: 1px solid rgba(245, 196, 0, 0.25);
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(245, 196, 0, 0.14),
+      transparent 57%
+    ),
+    linear-gradient(145deg, #1a1a1a, #080808);
+}
+
+.estadio-legacy__frame {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.estadio-legacy__frame::before,
+.estadio-legacy__frame::after {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  content: "";
+  border-color: var(--color-secondary);
+  border-style: solid;
+}
+
+.estadio-legacy__frame::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.estadio-legacy__frame::after {
+  right: -1px;
+  bottom: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.estadio-legacy__big-number {
+  position: absolute;
+  color: rgba(245, 196, 0, 0.09);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(120px, 17vw, 220px);
+  font-weight: 900;
+  letter-spacing: -10px;
+  line-height: 1;
+  user-select: none;
+}
+
+.estadio-legacy__seal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  padding: 27px 34px;
+  color: var(--blanco);
+  text-align: center;
+  border-top: 1px solid rgba(245, 196, 0, 0.75);
+  border-bottom: 1px solid rgba(245, 196, 0, 0.75);
+  background: rgba(8, 8, 8, 0.45);
+  animation: estadioSealGlow 4s ease-in-out infinite;
+}
+
+.estadio-legacy__seal > span {
+  color: var(--color-secondary);
+  font-size: 20px;
+}
+
+.estadio-legacy__seal strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 31px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 0.95;
+}
+
+.estadio-legacy__content .estadio-section-label {
+  margin-bottom: 28px;
+}
+
+.estadio-legacy__content h2 {
+  margin-bottom: 25px;
+  font-size: clamp(39px, 4.4vw, 60px);
+  line-height: 1.02;
+}
+
+.estadio-legacy__content h2 > span {
+  display: block;
+  margin-top: 5px;
+}
+
+.estadio-legacy__yellow {
+  color: var(--color-secondary);
+}
+
+.estadio-legacy__content > p {
+  max-width: 510px;
+  margin-bottom: 32px;
+  color: #bcbcbc;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.estadio-legacy__bottom {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-secondary);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.estadio-legacy__line {
+  width: 38px;
+  height: 2px;
+  background: var(--color-secondary);
+}
+
+
+/* ---------------- LLAMADA FINAL ---------------- */
+
+.estadio-final {
+  position: relative;
+  padding: 76px 0;
+  overflow: hidden;
+  color: var(--bg-secondary);
+  background: var(--color-secondary);
+}
+
+.estadio-final__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.estadio-final .estadio-section-label {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.67);
+}
+
+.estadio-final .estadio-section-label > span {
+  background: var(--bg-secondary);
+}
+
+.estadio-final h2 {
+  max-width: 700px;
+  margin-bottom: 13px;
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 0.98;
+}
+
+.estadio-final h2 > span {
+  display: block;
+}
+
+.estadio-final p {
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.estadio-final .estadio-btn--yellow {
+  flex: 0 0 auto;
+  color: var(--blanco) !important;
+  border-color: var(--bg-secondary);
+  background: var(--bg-secondary);
+  box-shadow: 0 0 0 transparent;
+}
+
+.estadio-final .estadio-btn--yellow:hover {
+  border-color: #262626;
+  background: #262626;
+}
+
+.estadio-final__watermark {
+  position: absolute;
+  right: -10px;
+  bottom: -35px;
+  color: rgba(0, 0, 0, 0.045);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(80px, 15vw, 185px);
+  font-weight: 900;
+  letter-spacing: -5px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+
+/* ---------------- ANIMACIONES ---------------- */
+
+@keyframes estadioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes estadioHeroZoom {
+  from {
+    transform: scale3d(1.02, 1.02, 1);
+  }
+
+  to {
+    transform: scale3d(1.10, 1.10, 1);
+  }
+}
+
+@keyframes estadioMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes estadioSealGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(245, 196, 0, 0.02);
+  }
+
+  50% {
+    box-shadow: 0 0 35px rgba(245, 196, 0, 0.10);
+  }
+}
+
+
+/* ---------------- RESPONSIVE: TABLETS ---------------- */
+
+@media (max-width: 1000px) {
+
+  .estadio-hero {
+    min-height: 650px;
+    padding-inline: 6%;
+  }
+
+  .estadios-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .estadios-heading__text {
+    max-width: 600px;
+  }
+
+  .estadio-card {
+    min-height: 560px;
+    padding: 23px 22px;
+  }
+
+  .estadio-card__content h3 {
+    font-size: clamp(34px, 4.3vw, 45px);
+  }
+
+  .estadio-card__details {
+    gap: 10px;
+  }
+
+  .estadio-card__detail {
+    gap: 8px;
+  }
+
+  .estadio-legacy__inner {
+    gap: 45px;
+  }
+
+  .estadio-legacy__visual {
+    min-height: 320px;
+  }
+}
+
+
+/* ---------------- RESPONSIVE: MOVILES ---------------- */
+
+@media (max-width: 680px) {
+
+  .estadio-container {
+    width: calc(100% - 36px);
+  }
+
+  .estadio-hero {
+    min-height: 690px;
+    min-height: 88svh;
+    padding: 100px 24px 85px;
+    align-items: center;
+  }
+
+  .estadio-hero::before {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(5, 5, 5, 0.91),
+        rgba(5, 5, 5, 0.55)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(5, 5, 5, 0.98),
+        transparent 75%
+      ),
+      url("../../../../public/images/estadio-achumani-club-the-strongest.jpg");
+
+    background-position: center, center, 58% center;
+  }
+
+  .estadio-hero__content {
+    width: 100%;
+  }
+
+  .estadio-hero .estadio-eyebrow {
+    gap: 9px;
+    margin-bottom: 30px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .estadio-eyebrow__line {
+    width: 20px;
+  }
+
+  .estadio-hero__title {
+    margin-bottom: 24px;
+    font-size: clamp(57px, 13vw, 84px);
+    letter-spacing: -1px;
+    line-height: 0.88;
+  }
+
+  .estadio-hero__description {
+    max-width: 400px;
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .estadio-hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 11px;
+  }
+
+  .estadio-btn {
+    justify-content: space-between;
+    min-height: 52px;
+    padding-inline: 17px;
+    font-size: 9px;
+  }
+
+  .estadio-hero__signature {
+    gap: 13px;
+    margin-top: 42px;
+  }
+
+  .estadio-hero__signature-number {
+    font-size: 33px;
+  }
+
+  .estadio-hero__signature-line {
+    width: 28px;
+  }
+
+  .estadio-hero__vertical,
+  .estadio-hero__scroll {
+    display: none;
+  }
+
+  .estadio-marquee {
+    height: 52px;
+  }
+
+  .estadio-marquee__track {
+    gap: 24px;
+  }
+
+  .estadio-marquee__track span {
+    font-size: 21px;
+  }
+
+  .estadios-section {
+    padding: 85px 0;
+  }
+
+  .estadios-heading {
+    gap: 20px;
+    margin-bottom: 34px;
+  }
+
+  .estadios-heading .estadio-section-label {
+    margin-bottom: 20px;
+  }
+
+  .estadio-section-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .estadios-title {
+    font-size: clamp(48px, 11vw, 66px);
+    line-height: 0.96;
+  }
+
+  .estadios-heading__text {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+
+  .estadios-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .estadio-card {
+    min-height: 550px;
+    padding: 22px 21px;
+  }
+
+  .estadio-card__top {
+    align-items: flex-start;
+  }
+
+  .estadio-card__tag {
+    padding: 9px;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+
+  .estadio-card__content {
+    padding-top: 70px;
+  }
+
+  .estadio-card__content h3 {
+    font-size: clamp(40px, 10vw, 54px);
+  }
+
+  .estadio-card__description {
+    font-size: 11px;
+    line-height: 1.85;
+  }
+
+  .estadio-card__details {
+    gap: 8px;
+    padding-block: 17px;
+  }
+
+  .estadio-card__detail-icon {
+    font-size: 20px;
+  }
+
+  .estadio-card__detail strong {
+    font-size: 11px;
+  }
+
+  .estadio-card__detail small {
+    font-size: 6.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .estadio-legacy {
+    padding: 80px 0;
+  }
+
+  .estadio-legacy__inner {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .estadio-legacy__visual {
+    min-height: 280px;
+  }
+
+  .estadio-legacy__big-number {
+    font-size: 160px;
+  }
+
+  .estadio-legacy__content .estadio-section-label {
+    margin-bottom: 22px;
+  }
+
+  .estadio-legacy__content h2 {
+    font-size: clamp(40px, 10vw, 55px);
+  }
+
+  .estadio-legacy__content > p {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+
+  .estadio-final {
+    padding: 58px 0;
+  }
+
+  .estadio-final__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .estadio-final h2 {
+    font-size: clamp(42px, 10vw, 59px);
+    line-height: 0.98;
+  }
+
+  .estadio-final__watermark {
+    right: -35px;
+    bottom: -14px;
+    font-size: 80px;
+  }
+
+}

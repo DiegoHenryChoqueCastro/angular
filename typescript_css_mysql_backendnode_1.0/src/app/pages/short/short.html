@@ -1,0 +1,78 @@
+<div class="short-container">
+<section class="short-section">
+    <div class="short-feed">
+    <nav class="short-tabs-header" aria-label="Categorías">
+        <button class="short-tab-btn active" type="button">Para ti</button>
+        <button class="short-tab-btn" type="button">Favoritos</button>
+    </nav>
+    <a routerLink="/" class="short-close-btn" type="button" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"></path></svg>
+    </a>
+    <div class="short-nav-controls">
+        <button class="short-nav-arrow" id="short-anterior" type="button" aria-label="Short anterior" id="short-anterior" (click)="moverSlider('anterior')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"></path></svg>
+        </button>
+        <button class="short-nav-arrow" id="short-siguiente" type="button" aria-label="Siguiente short" id="short-siguiente" (click)="moverSlider('siguiente')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z"></path></svg>
+        </button>
+    </div>
+    @if (videoData() && videoData().length > 0) {
+        @for (video of videoData(); track video.id ){
+            <div class="short-slide">
+                <article class="short-shell">
+                    <div class="short-meta">
+                        <h1 class="short-title">
+                            {{video.titulo}}
+                        </h1>
+                        <p class="short-description">
+                            El Club The Strongest es una institución
+                            deportiva con sede en la ciudad de La Paz,
+                            Bolivia, cuya actividad principal es el fútbol
+                            profesional. Fue fundado el 8 de abril de
+                            1908 por doce jóvenes estudiantes, liderados
+                            por José Villamil. Actualmente participa en
+                            la Primera División de Bolivia.
+                        </p>
+                        <div class="short-footer">
+                            <a class="short-autor" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83l1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+                                <span>Ver autor</span>
+                            </a>
+                            <div class="short-views">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"></path></svg>
+                                <span>643</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="short-video-frame" (click)="togglePlay(vidElem, overlay)">
+                        <button class="short-play-overlay" type="button" aria-label="Reproducir video" #overlay>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zM9.5 16.5v-9l7 4.5l-7 4.5z"></path></svg>
+                        </button>
+                        <video class="short-video" [src]="'videos/'+video.ruta_video" playsinline #vidElem loop></video>
+                    </div>
+                    <div class="short-actions">
+                        <button class="short-action-btn short-favorite" type="button" aria-label="Agregar a favoritos">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1l-.1-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05z"></path></svg>
+                            <span>1</span>
+                        </button>
+                        <button class="short-action-btn short-share" type="button" aria-label="Compartir">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81c1.66 0 3-1.34 3-3s-1.34-3-3-3s-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65c0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"></path></svg>
+                            <span>6</span>
+                        </button>
+                        <div class="short-volume-control" (click)="$event.stopPropagation()">
+                            <button class="short-action-btn short-btn-audio" type="button" aria-label="Activar audio" (click)="toggleAudio(vidElem)">
+                                <svg class="short-icono-muted" [style.display]="vidElem.muted ? 'block' : 'none' " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27L7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21L21 19.73l-9-9L4.27 3zM12 4L9.91 6.09L12 8.18V4z"></path></svg>
+                                <svg class="short-icono-unmuted" [style.display]="vidElem.muted ? 'none' : 'block' " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg>
+                            </button>
+                            <input class="short-volume-slider" type="range" min="0" max="100" [value]="vidElem.volume * 100" step="1" aria-label="Volumen" (input)="changeVolume($event, vidElem)">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        }
+        } @else {
+        <p class="loading">Cargando video...</p>
+    }
+    </div>
+</section>
+</div>

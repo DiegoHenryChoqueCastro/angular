@@ -1,0 +1,170 @@
+<main>
+
+<section
+    class="carousel"
+    tabindex="0"
+     (mouseenter)="stopAutoplay()"
+     (mouseleave)="startAutoplay()"
+     (keydown)="onKeyDown($event)"
+     (touchstart)="onTouchStart($event)"
+     (touchend)="onTouchEnd($event)"
+    aria-label="Carrusel de productos"
+  >
+
+    <div class="carousel__track"
+      [style.transform]="'translateX(-' + (currentSlide() * 100) + '%)'"
+       [style.transition]="transitionEnabled() ? 'transform ' + TRANSITION_TIME + 'ms ease' : 'none'"
+       (transitionend)="onTransitionEnd()">
+
+      <!-- Slide 1 -->
+      <article class="carousel__slide">
+        <img
+          src="{{ sliderUno }}"
+          alt="Producto número 1"
+          loading="eager"
+          decoding="async"
+        >
+
+        <div class="carousel__content">
+          <h1>
+            Diseño alternativo del estadio para el club en animación Lego
+          </h1>
+
+          <a href="#" class="carousel__button">
+            <span>Leer más</span>
+            <span
+              class="material-symbols-outlined"
+              aria-hidden="true"
+            >
+              double_arrow
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Slide 2 -->
+      <article class="carousel__slide">
+        <img
+          src="{{ sliderDos }}"
+          alt="Producto número 2"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="carousel__content">
+          <h1>
+            Página web del Hincha Stronguista
+          </h1>
+
+          <a href="#" class="carousel__button">
+            <span>Leer más</span>
+            <span
+              class="material-symbols-outlined"
+              aria-hidden="true"
+            >
+              double_arrow
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Slide 3 -->
+      <article class="carousel__slide">
+        <img
+          src="{{ sliderTres }}"
+          alt="Producto número 3"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="carousel__content">
+          <h1>
+            El Tigre de Achumani
+          </h1>
+
+          <a href="#" class="carousel__button">
+            <span>Leer más</span>
+            <span
+              class="material-symbols-outlined"
+              aria-hidden="true"
+            >
+              double_arrow
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Clon del primer slide para crear loop infinito -->
+      <article
+        class="carousel__slide carousel__slide--clone"
+        aria-hidden="true"
+      >
+        <img
+          src="{{sliderUno}}"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </article>
+
+    </div>
+
+    <!-- Flecha anterior -->
+    <button
+      type="button"
+      class="carousel__control carousel__control--prev"
+      aria-label="Slide anterior"
+      (click)="previousSlide()"
+    >
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        navigate_before
+      </span>
+    </button>
+
+    <!-- Flecha siguiente -->
+    <button
+      type="button"
+      class="carousel__control carousel__control--next"
+      aria-label="Slide siguiente"
+      (click)=nextSlide()
+    >
+      <span
+        class="material-symbols-outlined"
+        aria-hidden="true"
+      >
+        navigate_next
+      </span>
+    </button>
+
+    <!-- Indicadores -->
+    <div
+      class="carousel__indicators"
+      role="tablist"
+      aria-label="Seleccionar slide"
+    >
+      @for (dot of dots; track dot) {
+        <button
+          type="button"
+          class="carousel__dot is-active"
+          data-slide="0"
+          role="tab"
+          aria-label="Ir al slide 1"
+          [class.is-active]="dot === activeIndex()"
+          [attr.aria-selected]="dot === activeIndex()"
+          [attr.data-slide]="dot"
+          (click)="goToSlide(dot)"
+        ></button>
+      }
+    </div>
+
+  </section>
+
+
+  
+<app-quick></app-quick>
+<app-swiper></app-swiper>
+<app-shorts></app-shorts>
+</main>
